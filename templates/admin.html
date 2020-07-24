@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Code Share: Share your codes!</title>
+		<link  href="/static/pygment_native.css" rel="stylesheet">	</head>
+	<body>
+		<h1>Code Share: Share your codes!</h1>
+		<h2>Logs modifications</h2>
+		<a href="/">Retour accueil</a>
+
+		<ul>
+		{% if data %}
+			{% for row in data %}
+				<li>{{ row[0] }} | {{ row[1] }} | {{ row[2] }}| {{ row[3] }}</li>
+			{% endfor %}
+		{% endif %}
+		</ul>
+
+	</body>
+</html>

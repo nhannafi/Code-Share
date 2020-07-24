@@ -1,6 +1,8 @@
 <html>
    <head>
 	   <title>Code Share: Share your codes!</title>
+	   <link  href="/static/pygment_native.css" rel="stylesheet">
+
    </head>
    <body>
 	   <h1>Code Share: Share your codes!</h1>
@@ -9,7 +11,7 @@
 		 <p align=left>URL: <input name='url' value="{{ url }}">
 	   </form>
 	   <p align=left>
-		   <pre>{{ code }}</pre>
+		   <pre class="highlight">{{ code | safe }}</pre>
 	   </p>
 	   <a href="/edit/{{ uid }}">Edit</a></br>
 	   <a href="/create">Create New</a>
