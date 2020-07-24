@@ -1,7 +1,7 @@
 <html>
    <head>
-       <title>Code Share: Share your codes!</title>
-   </head>
+    <title>Code Share: Share your codes!</title>
+    <link  href="/static/pygment_native.css" rel="stylesheet">   </head>
    <body>
        <h1>Code Share: Share your codes!</h1>
        <p><a href="/">Home</a>
@@ -10,26 +10,18 @@
        <p align=left>URL: <input name='url' value="{{ url }}">
        {% endif %}
        <p align=center>
-       <form method="POST" action="/publish" enctypwe="multipart/form-data">
-           <table>
-            <tr>
-             <td>
-              <textarea name="code" rows=20 cols=100>{{ code }}</textarea><br/>
-             </td>
-             <td valign=top>
-                 <select name="langage">
-                    <option value ="HTML">HTML</option>
-                    <option value ="PHP">PHP</option>
-                    <option value ="JAVASCRIPT">JAVASCRIPT</option>
-                    <option value ="PYTHON">PYTHON</option>
-                </select>
+        <form method="POST" action="/publish" enctypwe="multipart/form-data">
+			<select name="language">
+				<option value="py" {% if 'py' == language %} selected {% endif %}>Python</option>
+				<option value="js" {% if 'js' == language %} selected {% endif %}>Javascript</option>
+				<option value="php" {% if 'php' == language %} selected {% endif %}>PHP</option>
+				<option value="c" {% if 'c' == language %} selected {% endif %}>C</option>
+			</select>
 
-               <input type="hidden" name="uid" value="{{ uid }}">
-               <button type="submit" name="submit" value="edit">Save</button><br/>
-               <button type="submit" name="submit" value="view">Save &amp; View</button>
-             </td>
-            </tr>
-           </table>
-       </form>
+			<button type="submit" name="submit" value="edit">Save</button>
+			<button type="submit" name="submit" value="view">Save &amp; View</button>
+			<textarea name="code" rows=20 cols=100>{{ code }}</textarea>
+			<input type="hidden" name="uid" value="{{ uid }}">
+	   </form>
    </body>
 </html>
